@@ -1,48 +1,74 @@
 {
-  "name": "ai-web-designer",
-  "version": "0.1.0",
-  "homepage": "https://csansoon.github.io/ai-web-designer",
+  "name": "argon-dashboard-pro-react",
+  "version": "1.1.0",
+  "homepage": "http://audax.s3-website.eu-west-2.amazonaws.com/",
   "private": true,
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.2.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@uiw/react-codemirror": "^4.19.9",
-    "openai": "^3.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "react-textarea-autosize": "^8.4.0",
-    "web-vitals": "^2.1.4"
+    "@fullcalendar/core": "4.4.0",
+    "@fullcalendar/daygrid": "4.4.0",
+    "@fullcalendar/interaction": "4.4.0",
+    "axios": "^0.21.1",
+    "chart.js": "2.9.3",
+    "classnames": "2.2.6",
+    "dropzone": "5.7.0",
+    "list.js": "1.5.0",
+    "moment": "2.24.0",
+    "node-sass": "4.13.1",
+    "nouislider": "14.1.1",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-bootstrap-sweetalert": "5.1.9",
+    "react-bootstrap-table-next": "3.3.5",
+    "react-bootstrap-table2-paginator": "2.1.0",
+    "react-bootstrap-table2-toolkit": "2.1.2",
+    "react-chartjs-2": "2.9.0",
+    "react-copy-to-clipboard": "5.0.2",
+    "react-datetime": "2.16.3",
+    "react-dom": "16.12.0",
+    "react-google-maps": "9.4.5",
+    "react-jvectormap": "0.0.15",
+    "react-notification-alert": "0.0.12",
+    "react-notification-system": "^0.4.0",
+    "react-perfect-scrollbar": "1.5.8",
+    "react-quill": "1.3.3",
+    "react-redux": "^7.2.2",
+    "react-router": "5.1.2",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.0",
+    "react-select2-wrapper": "1.0.4-beta6",
+    "react-tagsinput": "3.19.0",
+    "react-to-print": "2.5.1",
+    "reactstrap": "8.9.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "set PORT=5000 && react-scripts start",
+    "build": "react-scripts build && gulp licenses",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile-sass": "node-sass src/assets/scss/argon-dashboard-pro-react.scss src/assets/css/argon-dashboard-pro-react.css",
+    "minify-sass": "node-sass src/assets/scss/argon-dashboard-pro-react.scss src/assets/css/argon-dashboard-pro-react.min.css --output-style compressed",
+    "map-sass": "node-sass src/assets/scss/argon-dashboard-pro-react.scss src/assets/css/argon-dashboard-pro-react.css --source-map true"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "@types/googlemaps": "3.39.2",
+    "@types/markerclustererplus": "2.1.33",
+    "@types/react": "16.9.21",
+    "eslint-plugin-flowtype": "3.13.0",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
+    "typescript": "3.7.5"
   }
 }
